@@ -6,13 +6,18 @@ namespace Begining
     {
         static void Main(string[] args)
         {
-            Console.Write("Как Ваше имя? ");
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("What is your name? ");
 
             var name = Console.ReadLine();
 
-            Console.WriteLine($"Привет, {name}, сегодня {DateTime.Now}!");
-            Console.ReadLine();
-
+            Console.WriteLine($"Hello, {name}, today is {DateTime.Now}!");
+            Console.Write("Press any key to continue...");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("Bye-Bye!");
         }
     }
 }
