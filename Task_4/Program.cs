@@ -20,7 +20,7 @@ namespace Task_4
             December
         }
 
-        public const int monthsInYear = 12;
+        private const int monthsInYear = 12;
         static void Main(string[] args)
         {
             Console.BackgroundColor = ConsoleColor.Gray;
