@@ -16,32 +16,33 @@ namespace Begining
             Console.Clear();
 
             string[,] peopleData = new string[3, 3];
+            bool incorrectData;
+            string firstName;
+            string lastName;
+            string middleName;
 
             Console.WriteLine("Enter some data about three people you want to invite!");
 
             for (int i = 0; i < peopleData.GetLength(0); i++)
             {
-                Console.Write("Enter first name:  ");
-                string firstName = Console.ReadLine();
-                Console.Write("Enter last name:  ");
-                string lastName = Console.ReadLine();
-                Console.Write("Enter middle name:  ");
-                string middleName = Console.ReadLine();
+                do
+                {                     
+                     Console.Write("Enter first name:  ");
+                     firstName = Console.ReadLine();
+                     Console.Write("Enter last name:  ");
+                     lastName = Console.ReadLine();
+                     Console.Write("Enter middle name:  ");
+                     middleName = Console.ReadLine();
+                     incorrectData = String.IsNullOrEmpty(firstName) || String.IsNullOrEmpty(lastName) || String.IsNullOrEmpty(middleName);
 
-                bool incorrectData = String.IsNullOrEmpty(firstName) || String.IsNullOrEmpty(lastName) || String.IsNullOrEmpty(middleName);
+                     if(incorrectData)
+                     {
+                        Console.WriteLine("Enter correct data! Parametr can't be empty!");
+                     }
 
-                while (incorrectData)
-                {
-                    Console.WriteLine("Enter correct data! Parametr can't be empty!");
-                    Console.Write("Enter first name:  ");
-                    firstName = Console.ReadLine();
-                    Console.Write("Enter last name:  ");
-                    lastName = Console.ReadLine();
-                    Console.Write("Enter middle name:  ");
-                    middleName = Console.ReadLine();
-                    incorrectData = String.IsNullOrEmpty(firstName) || String.IsNullOrEmpty(lastName) || String.IsNullOrEmpty(middleName);
-                    Console.WriteLine();
+                     Console.WriteLine();
                 }
+                while (incorrectData) ;
 
                 peopleData[i, 0] = firstName;
                 peopleData[i, 1] = lastName;
