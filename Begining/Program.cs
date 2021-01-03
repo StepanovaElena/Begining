@@ -84,16 +84,17 @@ namespace Begining
         {
             Console.WriteLine();
             Console.Write("Enter process ID or name to cancel: ");
-            bool isNumber = (int.TryParse(Console.ReadLine(), out int id));
+            string inputValue = Console.ReadLine();
+            bool isNumber = (int.TryParse(inputValue, out int id));
 
             if (!isNumber)
-            {
-                string name = Console.ReadLine();
-                CancelProcessByName(name);
-
+            {                
+                CancelProcessByName(inputValue);
             }
-
-            CancelProcessById(id);
+            else
+            {
+                CancelProcessById(id);
+            }            
         }
 
         private static void CancelProcessById(int id)
@@ -120,7 +121,6 @@ namespace Begining
 
             for (int i = paginator.StartIndex; i <= paginator.EndIndex; i++)
             {
-
                 var memorySize = string.Format("{0:0.00}", Convert.ToDouble(processesList[i].VirtualMemorySize64 / Math.Pow(1024, 2)));
                 Console.WriteLine("{0, 8}   {1, 50}   {2, 20}", processesList[i].Id, processesList[i].ProcessName, memorySize);
             }
