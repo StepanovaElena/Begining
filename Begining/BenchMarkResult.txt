@@ -1,0 +1,13 @@
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.19041.746 (2004/?/20H1)
+Intel Core i7-8750H CPU 2.20GHz (Coffee Lake), 1 CPU, 12 logical and 6 physical cores
+.NET Core SDK=5.0.100
+  [Host]     : .NET Core 3.1.9 (CoreCLR 4.700.20.47201, CoreFX 4.700.20.47203), X64 RyuJIT  [AttachedDebugger]
+  DefaultJob : .NET Core 3.1.9 (CoreCLR 4.700.20.47201, CoreFX 4.700.20.47203), X64 RyuJIT
+
+
+|                     Method |     Mean |     Error |    StdDev |
+|--------------------------- |---------:|----------:|----------:|
+|          TestPointDistance | 6.819 us | 0.0262 us | 0.0233 us |
+|    TestPointDistanceDouble | 6.860 us | 0.0325 us | 0.0304 us |
+|     TestPointDistanceShort | 6.848 us | 0.0291 us | 0.0258 us |
+| TestPointDistanceWithClass | 6.864 us | 0.0209 us | 0.0185 us |
